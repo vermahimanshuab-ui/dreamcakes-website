@@ -1,0 +1,208 @@
+/* ═══════════════════════════════════════════════
+   CONTACT PAGE STYLES
+   ═══════════════════════════════════════════════ */
+
+/* ── Hero ── */
+.contact-hero {
+  padding: calc(var(--nav-height) + var(--space-3xl)) 0 var(--space-2xl);
+  background: linear-gradient(135deg, var(--cream) 0%, var(--lavender-light) 50%, var(--rose-light) 100%);
+  text-align: center;
+}
+
+.contact-hero__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  color: var(--espresso);
+  margin-bottom: var(--space-sm);
+}
+
+.contact-hero__subtitle {
+  font-size: 18px;
+  color: var(--text-mid);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* ── Contact Grid ── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+/* ── Form Wrapper ── */
+.contact-form-wrapper {
+  background: #fff;
+  border-radius: var(--card-radius);
+  padding: var(--space-2xl);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-form__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  color: var(--espresso);
+  margin-bottom: var(--space-xl);
+}
+
+.contact-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+/* ── Sidebar Info Cards ── */
+.contact-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.contact-info-card {
+  background: #fff;
+  border-radius: var(--card-radius);
+  padding: var(--space-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-info-card__title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--espresso);
+  margin-bottom: var(--space-md);
+}
+
+.contact-info-card__address {
+  font-size: var(--text-small);
+  color: var(--text-mid);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+.contact-info-card__actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.contact-info-card__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* ── Contact Links ── */
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: all var(--duration-fast) ease;
+  background: var(--cream);
+}
+
+.contact-link:hover {
+  background: var(--rose-light);
+  transform: translateX(4px);
+}
+
+.contact-link__icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.contact-link div {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-link strong {
+  font-size: var(--text-small);
+  color: var(--espresso);
+  font-weight: 600;
+}
+
+.contact-link span {
+  font-size: var(--text-caption);
+  color: var(--text-light);
+}
+
+/* ── Opening Hours ── */
+.contact-hours {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.contact-hours__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--border);
+  font-size: var(--text-small);
+}
+
+.contact-hours__row:last-child {
+  border-bottom: none;
+}
+
+.contact-hours__row span {
+  color: var(--text-mid);
+}
+
+.contact-hours__row strong {
+  color: var(--espresso);
+}
+
+/* ── Success State ── */
+.contact-success {
+  text-align: center;
+  padding: var(--space-2xl);
+}
+
+.contact-success__icon {
+  font-size: 48px;
+  margin-bottom: var(--space-md);
+}
+
+.contact-success__title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  color: var(--espresso);
+  margin-bottom: var(--space-sm);
+}
+
+.contact-success__text {
+  color: var(--text-mid);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ── Maps Section ── */
+.contact-maps .locations__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+/* ── Responsive ── */
+@media (max-width: 800px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-maps .locations__grid {
+    grid-template-columns: 1fr;
+  }
+}

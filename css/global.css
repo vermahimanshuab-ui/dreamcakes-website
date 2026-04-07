@@ -1,0 +1,245 @@
+/* ═══════════════════════════════════════════════
+   DREAM CAKES & CAFE — GLOBAL STYLES
+   Reset, Typography, Utilities
+   ═══════════════════════════════════════════════ */
+
+/* ── CSS Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--cream);
+  color: var(--text-dark);
+  line-height: 1.7;
+  font-size: var(--text-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--rose-deep);
+  text-decoration: none;
+  transition: color var(--duration-fast) ease;
+}
+
+a:hover {
+  color: var(--rose);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--espresso);
+}
+
+h1 { font-size: var(--text-h1); }
+h2 { font-size: var(--text-h2); }
+h3 { font-size: var(--text-h3); }
+h4 { font-size: var(--text-h4); }
+
+.text-hero {
+  font-size: var(--text-hero);
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+p {
+  margin-bottom: var(--space-md);
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.text-center { text-align: center; }
+.text-white { color: #fff; }
+.text-rose { color: var(--rose); }
+.text-rose-deep { color: var(--rose-deep); }
+.text-gold { color: var(--gold); }
+.text-teal { color: var(--teal); }
+.text-mid { color: var(--text-mid); }
+.text-light { color: var(--text-light); }
+
+.italic { font-style: italic; }
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+/* ── Layout ── */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-2xl);
+}
+
+.section {
+  padding: var(--space-4xl) 0 var(--space-3xl);
+}
+
+.section--cream { background-color: var(--cream); }
+.section--blush { background-color: var(--blush); }
+.section--espresso { background-color: var(--espresso); }
+.section--teal { background-color: var(--teal); }
+.section--gold-light { background-color: var(--gold-light); }
+
+/* ── Grid System ── */
+.grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ── Flexbox Helpers ── */
+.flex { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.flex-col { display: flex; flex-direction: column; }
+.gap-sm { gap: var(--space-sm); }
+.gap-md { gap: var(--space-md); }
+.gap-lg { gap: var(--space-lg); }
+.gap-xl { gap: var(--space-xl); }
+
+/* ── Section Headers ── */
+.section-eyebrow {
+  font-size: var(--text-micro);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--rose);
+  margin-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background: var(--rose);
+  border-radius: 2px;
+}
+
+.section-title {
+  font-size: var(--text-h2);
+  margin-bottom: var(--space-md);
+}
+
+.section-subtitle {
+  font-size: var(--text-body);
+  color: var(--text-mid);
+  max-width: 560px;
+}
+
+.section-header {
+  margin-bottom: var(--space-2xl);
+}
+
+.section-header--center {
+  text-align: center;
+}
+
+.section-header--center .section-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-header--center .section-eyebrow {
+  justify-content: center;
+}
+
+.section-header--center .section-eyebrow::before {
+  display: none;
+}
+
+/* ── Page Content Area ── */
+#app {
+  min-height: 100vh;
+  opacity: 1;
+  transition: opacity 0.42s ease-out;
+}
+
+#app.page-transitioning {
+  opacity: 0;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-light); }
+
+/* ── Selection ── */
+::selection {
+  background: var(--rose-light);
+  color: var(--espresso);
+}
+
+/* ── Focus Styles ── */
+:focus-visible {
+  outline: 2px solid var(--rose);
+  outline-offset: 2px;
+  border-radius: var(--radius);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .container { padding: 0 var(--space-lg); }
+  .section { padding: var(--space-3xl) 0 var(--space-2xl); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 var(--space-md); }
+  .section { padding: var(--space-2xl) 0; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .grid-4 { grid-template-columns: 1fr; }
+}

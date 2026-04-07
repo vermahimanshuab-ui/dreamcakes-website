@@ -1,0 +1,80 @@
+/* ═══════════════════════════════════════════════
+   DREAM CAKES & CAFE — DESIGN TOKENS
+   ═══════════════════════════════════════════════ */
+
+:root {
+  /* ── Brand Colors ── */
+  --rose:        #F28B82;
+  --rose-light:  #FDE8E6;
+  --rose-deep:   #C0574E;
+  --teal:        #4DBFA8;
+  --teal-light:  #D6F5EE;
+  --cream:       #FFF8F0;
+  --espresso:    #2C1F1A;
+  --gold:        #D4A853;
+  --gold-light:  #FEF5E4;
+  --peach:       #F5A261;
+  --lavender:    #C3B1E1;
+  --lavender-light: #F0EBF8;
+  --whatsapp:    #25D366;
+  --blush:       #FDECEA;
+
+  /* ── Text Colors ── */
+  --text-dark:   #2C1F1A;
+  --text-mid:    #6B5E58;
+  --text-light:  #A0948E;
+
+  /* ── Surface Colors ── */
+  --border:      #F0E8E4;
+  --card:        #FFFFFF;
+  --overlay:     rgba(44, 31, 26, 0.55);
+
+  /* ── Typography ── */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  /* ── Font Sizes ── */
+  --text-hero:   clamp(40px, 5vw, 64px);
+  --text-h1:     clamp(32px, 4vw, 48px);
+  --text-h2:     clamp(28px, 3.5vw, 36px);
+  --text-h3:     clamp(22px, 2.5vw, 28px);
+  --text-h4:     clamp(18px, 2vw, 22px);
+  --text-body:   16px;
+  --text-small:  14px;
+  --text-caption: 12px;
+  --text-micro:  11px;
+
+  /* ── Spacing ── */
+  --space-xs:    4px;
+  --space-sm:    8px;
+  --space-md:    16px;
+  --space-lg:    24px;
+  --space-xl:    32px;
+  --space-2xl:   48px;
+  --space-3xl:   64px;
+  --space-4xl:   80px;
+
+  /* ── Layout ── */
+  --max-width:   1200px;
+  --nav-height:  72px;
+  --card-radius: 20px;
+  --pill-radius: 100px;
+  --btn-radius:  100px;
+  --radius:      12px;
+  --sidebar-width: 280px;
+
+  /* ── Shadows ── */
+  --shadow-sm:   0 2px 8px rgba(44, 31, 26, 0.06);
+  --shadow-md:   0 4px 20px rgba(44, 31, 26, 0.08);
+  --shadow-lg:   0 8px 40px rgba(44, 31, 26, 0.12);
+  --shadow-btn:  0 4px 16px rgba(242, 139, 130, 0.35);
+  --shadow-card-hover: 0 12px 36px rgba(44, 31, 26, 0.12);
+
+  /* ── Transitions ── */
+  --ease-out:    cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 0.2s;
+  --duration-normal: 0.3s;
+  --duration-slow: 0.5s;
+}

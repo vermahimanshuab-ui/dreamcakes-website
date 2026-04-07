@@ -1,0 +1,634 @@
+/* ═══════════════════════════════════════════════
+   DREAM CAKES & CAFE — COMPONENTS
+   Buttons, Cards, Pills, Forms, etc.
+   ═══════════════════════════════════════════════ */
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  height: 50px;
+  padding: 0 36px;
+  border-radius: var(--btn-radius);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-smooth);
+  text-decoration: none;
+  white-space: nowrap;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Primary Rose Button */
+.btn--primary {
+  background: var(--rose);
+  color: #fff;
+  box-shadow: var(--shadow-btn);
+}
+
+.btn--primary:hover {
+  background: var(--rose-deep);
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(242, 139, 130, 0.45);
+  transform: translateY(-1px);
+}
+
+/* Secondary / Outline */
+.btn--secondary {
+  background: #fff;
+  color: var(--rose-deep);
+  border: 2px solid var(--rose);
+}
+
+.btn--secondary:hover {
+  background: var(--rose-light);
+  border-color: var(--rose-deep);
+  color: var(--rose-deep);
+}
+
+/* Ghost (for dark backgrounds) */
+.btn--ghost {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+}
+
+.btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+  color: #fff;
+}
+
+/* Teal CTA */
+.btn--teal {
+  background: var(--teal);
+  color: #fff;
+}
+
+.btn--teal:hover {
+  background: #3AA090;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* WhatsApp */
+.btn--whatsapp {
+  background: var(--whatsapp);
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn--whatsapp:hover {
+  background: #1EBE5B;
+  color: #fff;
+}
+
+/* Add to Cart (dark) */
+.btn--add-to-cart {
+  background: var(--espresso);
+  color: #fff;
+  width: 100%;
+  border-radius: var(--radius);
+  height: 48px;
+  font-weight: 600;
+}
+
+.btn--add-to-cart:hover {
+  background: #3D2E27;
+  color: #fff;
+}
+
+/* White button (on colored backgrounds) */
+.btn--white {
+  background: #fff;
+  color: var(--espresso);
+  font-weight: 600;
+}
+
+.btn--white:hover {
+  background: #F5F0EB;
+  color: var(--espresso);
+}
+
+/* Small button variant */
+.btn--sm {
+  height: 40px;
+  padding: 0 24px;
+  font-size: 13px;
+}
+
+/* Large button variant */
+.btn--lg {
+  height: 56px;
+  padding: 0 44px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Full width */
+.btn--full {
+  width: 100%;
+}
+
+/* ── Pills / Badges ── */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 14px;
+  border-radius: var(--pill-radius);
+  font-size: var(--text-micro);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.pill--rose {
+  background: var(--rose-light);
+  color: var(--rose-deep);
+}
+
+.pill--teal {
+  background: var(--teal-light);
+  color: #1B7A68;
+}
+
+.pill--gold {
+  background: var(--gold-light);
+  color: #8A6520;
+}
+
+.pill--espresso {
+  background: rgba(44, 31, 26, 0.08);
+  color: var(--espresso);
+}
+
+.pill--white {
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ── Product Card ── */
+.product-card {
+  background: var(--card);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  transition: all var(--duration-normal) var(--ease-out);
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.product-card__image-wrap {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  /* Arch-top shape */
+  border-radius: var(--card-radius) var(--card-radius) 0 0;
+  clip-path: ellipse(100% 92% at 50% 0%);
+}
+
+.product-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-normal) var(--ease-smooth);
+}
+
+.product-card:hover .product-card__image {
+  transform: scale(1.08);
+}
+
+.product-card__wishlist {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+  z-index: 2;
+  font-size: 16px;
+  border: none;
+}
+
+.product-card__wishlist:hover {
+  transform: scale(1.12);
+  background: #fff;
+}
+
+.product-card__wishlist.active {
+  color: var(--rose);
+}
+
+.product-card__tags {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+
+.product-card__body {
+  padding: var(--space-md) var(--space-lg);
+}
+
+.product-card__name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--espresso);
+  margin-bottom: 4px;
+}
+
+.product-card__desc {
+  font-size: var(--text-caption);
+  color: var(--text-mid);
+  margin-bottom: var(--space-sm);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-card__price {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: var(--space-md);
+}
+
+/* ── Review Card ── */
+.review-card {
+  background: var(--card);
+  border: 1px solid var(--rose-light);
+  border-radius: 16px;
+  padding: var(--space-lg);
+  min-width: 320px;
+  max-width: 380px;
+  flex-shrink: 0;
+  transition: all var(--duration-fast) ease;
+}
+
+.review-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.review-card__stars {
+  color: var(--gold);
+  font-size: 16px;
+  margin-bottom: var(--space-sm);
+  letter-spacing: 2px;
+}
+
+.review-card__text {
+  font-size: var(--text-small);
+  color: var(--text-mid);
+  line-height: 1.65;
+  margin-bottom: var(--space-md);
+  font-style: italic;
+}
+
+.review-card__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.review-card__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--rose-light);
+  color: var(--rose-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.review-card__name {
+  font-weight: 600;
+  font-size: var(--text-small);
+  color: var(--espresso);
+}
+
+/* ── Category Card ── */
+.category-card {
+  position: relative;
+  width: 200px;
+  height: 260px;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.category-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-normal) var(--ease-smooth);
+}
+
+.category-card:hover .category-card__image {
+  transform: scale(1.06);
+}
+
+.category-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44, 31, 26, 0.7) 0%, transparent 60%);
+  z-index: 1;
+}
+
+.category-card__name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  z-index: 2;
+  transition: transform var(--duration-fast) ease;
+  gap: 6px;
+}
+
+.category-card:hover .category-card__name {
+  transform: translateY(-4px);
+}
+
+.category-card__emoji {
+  display: block;
+  font-size: 48px;
+  margin-bottom: 2px;
+}
+
+/* ── Stats Counter ── */
+.stat-item {
+  text-align: center;
+}
+
+.stat-item__number {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.stat-item__label {
+  font-size: var(--text-small);
+  font-weight: 500;
+  margin-top: var(--space-sm);
+  opacity: 0.9;
+}
+
+.stat-item__label--rose { color: var(--rose); }
+.stat-item__label--teal { color: var(--teal); }
+.stat-item__label--gold { color: var(--gold); }
+
+/* ── Form Elements ── */
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-label {
+  display: block;
+  font-size: var(--text-small);
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: var(--space-sm);
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-size: var(--text-body);
+  color: var(--text-dark);
+  background: #fff;
+  transition: border-color var(--duration-fast) ease;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px rgba(242, 139, 130, 0.15);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--text-light);
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ── Accordion ── */
+.accordion {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.accordion__item {
+  border-bottom: 1px solid var(--border);
+}
+
+.accordion__item:last-child {
+  border-bottom: none;
+}
+
+.accordion__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-dark);
+  background: #fff;
+  transition: background var(--duration-fast) ease;
+}
+
+.accordion__trigger:hover {
+  background: var(--cream);
+}
+
+.accordion__trigger::after {
+  content: '▸';
+  font-size: 14px;
+  transition: transform var(--duration-normal) ease;
+}
+
+.accordion__item.open .accordion__trigger::after {
+  transform: rotate(90deg);
+}
+
+.accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--duration-normal) ease;
+}
+
+.accordion__content-inner {
+  padding: 0 var(--space-lg) var(--space-lg);
+  color: var(--text-mid);
+  font-size: var(--text-small);
+  line-height: 1.7;
+}
+
+/* ── Skeleton Loading ── */
+.skeleton {
+  background: linear-gradient(90deg, var(--border) 25%, #F5EDE8 50%, var(--border) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: var(--radius);
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton--card {
+  height: 380px;
+  border-radius: var(--card-radius);
+}
+
+.skeleton--text {
+  height: 20px;
+  margin-bottom: 8px;
+}
+
+.skeleton--text:last-child {
+  width: 60%;
+}
+
+/* ── Toast / Banner ── */
+.toast {
+  position: fixed;
+  top: calc(var(--nav-height) + 12px);
+  right: 20px;
+  max-width: 380px;
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius);
+  font-size: var(--text-small);
+  font-weight: 500;
+  z-index: 10000;
+  transform: translateX(120%);
+  transition: transform var(--duration-normal) var(--ease-out);
+  box-shadow: var(--shadow-lg);
+}
+
+.toast.show {
+  transform: translateX(0);
+}
+
+.toast--success {
+  background: var(--teal-light);
+  color: #1B7A68;
+  border: 1px solid rgba(77, 191, 168, 0.3);
+}
+
+.toast--error {
+  background: var(--rose-light);
+  color: var(--rose-deep);
+  border: 1px solid rgba(242, 139, 130, 0.3);
+}
+
+/* ── WhatsApp Floating Button ── */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--whatsapp);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  z-index: 9000;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+  transition: all var(--duration-fast) ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+}
+
+/* -- Loading Spinner -- */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--rose-light);
+  border-top-color: var(--rose);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4xl) 0;
+  gap: var(--space-md);
+  color: var(--text-mid);
+}
