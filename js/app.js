@@ -90,9 +90,6 @@ async function handleRoute() {
     case 'search':
       content = typeof renderSearchPage === 'function' ? await renderSearchPage(params) : renderComingSoon('Search');
       break;
-    case 'order-confirmed':
-      content = typeof renderOrderConfirmedPage === 'function' ? await renderOrderConfirmedPage(params) : renderComingSoon('Order Confirmed');
-      break;
     case 'login':
       content = typeof renderLoginPage === 'function' ? await renderLoginPage() : renderComingSoon('Login');
       break;
@@ -155,6 +152,9 @@ async function handleRoute() {
       break;
     case 'order-confirmed':
       if (typeof initOrderConfirmedPage === 'function') initOrderConfirmedPage();
+      break;
+    case 'login':
+      if (typeof initLoginPage === 'function') initLoginPage();
       break;
   }
 

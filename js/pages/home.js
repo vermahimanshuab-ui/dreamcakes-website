@@ -7,11 +7,9 @@ async function renderHomePage() {
     <!-- SECTION 1: CINEMATIC HERO -->
     <section class="hero" id="hero">
       <div class="hero__media">
-        <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="">
-          <source src="assets/hero-video.mp4" type="video/mp4">
+        <video class="hero__video" autoplay muted loop playsinline preload="auto">
+          <source src="assets/hero%20video.mp4" type="video/mp4">
         </video>
-        <!-- Fallback image (shown if no video) -->
-        <img class="hero__image" src="assets/hero-fallback.jpg" alt="Dream Cakes & Cafe — Artisan bakery in Siliguri" style="display:none;">
         <div class="hero__overlay"></div>
       </div>
 
@@ -239,19 +237,13 @@ function renderCategoryCards() {
 }
 
 async function initHomePage() {
-  // Video fallback handling
+  // Video error handling
   const video = document.querySelector('.hero__video');
-  const fallbackImg = document.querySelector('.hero__image');
   if (video) {
-    video.addEventListener('error', () => {
-      video.style.display = 'none';
-      if (fallbackImg) fallbackImg.style.display = 'block';
-    });
-    // If no src yet, show fallback
+    video.addEventListener('error', () => console.warn('Hero video failed to load'));
     const source = video.querySelector('source');
-    if (source && !source.src.includes('hero-video')) {
-      video.style.display = 'none';
-      if (fallbackImg) fallbackImg.style.display = 'block';
+    if (source) {
+      source.addEventListener('error', () => console.warn('Hero video source failed to load'));
     }
   }
 

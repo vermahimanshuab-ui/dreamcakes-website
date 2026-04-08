@@ -1,0 +1,239 @@
+/* ═══════════════════════════════════════════════
+   LOGIN / TRACK ORDER PAGE STYLES
+   ═══════════════════════════════════════════════ */
+
+.login-hero {
+  min-height: 100vh;
+  padding: calc(var(--nav-height) + var(--space-3xl)) 0 var(--space-4xl);
+  background: linear-gradient(160deg, var(--cream) 0%, #fff 40%, var(--rose-light) 100%);
+  display: flex;
+  align-items: center;
+}
+
+.login-card {
+  background: #fff;
+  border-radius: var(--card-radius);
+  padding: var(--space-2xl);
+  max-width: 480px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-lg);
+}
+
+.login-card__header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.login-card__icon {
+  font-size: 48px;
+  margin-bottom: var(--space-md);
+}
+
+.login-card__title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--espresso);
+  margin-bottom: var(--space-sm);
+}
+
+.login-card__subtitle {
+  color: var(--text-mid);
+  font-size: 15px;
+}
+
+/* ── Tabs ── */
+.login-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--cream);
+  border-radius: var(--pill-radius);
+  margin-bottom: var(--space-xl);
+}
+
+.login-tab {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: var(--pill-radius);
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.login-tab.active {
+  background: #fff;
+  color: var(--espresso);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* ── Form ── */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* ── Contact Cards ── */
+.login-contact-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.login-contact-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--espresso);
+  transition: all 0.2s;
+}
+
+.login-contact-card:hover {
+  border-color: var(--rose);
+  background: var(--rose-light);
+}
+
+.login-contact-card--wa {
+  border-color: #25D366;
+  background: #f0fdf4;
+}
+
+.login-contact-card--wa:hover {
+  background: #dcfce7;
+}
+
+.login-contact-card__icon {
+  font-size: 24px;
+}
+
+.login-contact-card__label {
+  font-size: 12px;
+  color: var(--text-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.login-contact-card__value {
+  font-weight: 600;
+  font-size: 15px;
+  margin-left: auto;
+}
+
+/* ── Results ── */
+.login-results {
+  margin-top: var(--space-lg);
+}
+
+.login-results__title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: var(--space-md);
+}
+
+.login-loading {
+  text-align: center;
+  padding: var(--space-xl) 0;
+  color: var(--text-mid);
+}
+
+.login-loading .spinner {
+  margin: 0 auto var(--space-md);
+}
+
+.login-no-orders {
+  text-align: center;
+  padding: var(--space-xl) 0;
+  color: var(--text-mid);
+}
+
+.login-no-orders__icon {
+  font-size: 40px;
+  margin-bottom: var(--space-sm);
+}
+
+/* ── Order Card ── */
+.login-order-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  transition: border-color 0.2s;
+}
+
+.login-order-card:hover {
+  border-color: var(--rose);
+}
+
+.login-order-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+}
+
+.login-order-card__date {
+  font-size: 13px;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.login-order-card__status {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--pill-radius);
+}
+
+.login-order-card__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.login-order-card__detail {
+  font-size: 13px;
+  color: var(--text-mid);
+}
+
+.login-order-card__detail strong {
+  color: var(--espresso);
+}
+
+/* ── Footer ── */
+.login-card__footer {
+  text-align: center;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text-mid);
+}
+
+.login-card__footer a {
+  font-weight: 600;
+}
+
+.text-rose {
+  color: var(--rose-deep);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .login-card {
+    margin: 0 var(--space-md);
+    padding: var(--space-xl) var(--space-lg);
+  }
+}
